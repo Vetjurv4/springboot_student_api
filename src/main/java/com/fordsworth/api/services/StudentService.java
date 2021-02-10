@@ -1,5 +1,6 @@
 package com.fordsworth.api.services;
 
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fordsworth.api.models.Student;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +10,7 @@ import java.util.List;
 @Service
 public class StudentService {
 
+    @JsonAnyGetter
     public List<Student> getStudents(){
         List<Student> listOfStudents = new ArrayList<>();
 
@@ -20,7 +22,6 @@ public class StudentService {
         listOfStudents.add(new Student("Jeff Bezos", "(9A)", 2000, 10));
 
         return listOfStudents;
-
     }
 
 }
